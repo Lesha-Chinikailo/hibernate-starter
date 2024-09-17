@@ -25,6 +25,8 @@ public class User {
 //    @Convert(converter = BirthdayConverter.class)
     @Column(name = "birth_date")
     private Birthday birthDate;
+
+
     @Enumerated(EnumType.STRING)
     private Role role;
 }
