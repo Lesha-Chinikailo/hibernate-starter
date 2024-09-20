@@ -23,11 +23,11 @@ public class HibernateRunner {
 
         User user = User.builder()
             .username("ivan2@gmail.com")
-                .personalInfo(PersonalInfo.builder()
-                        .firstname("Ivan")
-                        .lastname("Ivanov")
-                        .birthDate(new Birthday(LocalDate.of(2000, 1, 20)))
-                        .build())
+            .personalInfo(PersonalInfo.builder()
+                    .firstname("Ivan")
+                    .lastname("Ivanov")
+                    .birthDate(new Birthday(LocalDate.of(2000, 1, 20)))
+                    .build())
             .role(Role.ADMIN)
             .build();
         log.info("User entity is in transient state, user: {}", user);
