@@ -28,7 +28,10 @@ public class User {
     @AttributeOverride(name = "birthDate", column = @Column(name = "birth_date"))
     private PersonalInfo personalInfo;
 
-
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @ManyToOne()
+    @JoinColumn(name = "company_id")
+    private Company company;
 }
