@@ -35,10 +35,8 @@ public class HibernateRunner {
             try (session) {
                 Transaction transaction = session.beginTransaction();
 
-                User user1 = session.get(User.class, 1L);
-//                session.persist(company);
-//                session.persist(user);
-
+//                User user1 = session.get(User.class, 1L);
+                Company company1 = session.get(Company.class, 1);
                 transaction.commit();
             }
         }
