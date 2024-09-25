@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dmdev.HibernateRunnerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-25T12:46:11" hostname="DESKTOP-501ABTG" time="10.65">
+  <properties/>
+  <testcase name="checkOneToOne()" classname="com.dmdev.HibernateRunnerTest" time="10.65"/>
+  <system-out><![CDATA[[15:46:11,232] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.6.0.Final
+[15:46:11,562] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[15:46:11,714] WARN [org.hibernate.orm.connections.pooling: 86] HHH10001002: Using built-in connection pool (not intended for production use)
+[15:46:12,060] WARN [org.hibernate.orm.deprecation: 153] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[15:46:12,085] INFO [org.hibernate.orm.connections.pooling: 158] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/hibernate]
+	Database driver: org.postgresql.Driver
+	Database version: 16.3
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+[15:46:13,804] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 59] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    insert 
+    into
+        public.users
+        (company_id, birth_date, firstname, lastname, role, username) 
+    values
+        (?, ?, ?, ?, ?, ?) 
+    returning id
+Hibernate: 
+    insert 
+    into
+        profile
+        (language, street, user_id) 
+    values
+        (?, ?, ?) 
+    returning id
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
