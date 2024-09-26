@@ -21,7 +21,7 @@ public class HibernateRunner {
                 .name("Google")
                 .build();
         User user = User.builder()
-            .username("ivan2@gmail.com")
+            .username("nivan2@gmail.com")
             .personalInfo(PersonalInfo.builder()
                     .firstname("Ivan")
                     .lastname("Ivanov")
@@ -37,6 +37,7 @@ public class HibernateRunner {
 
 //                User user1 = session.get(User.class, 1L);
                 Company company1 = session.get(Company.class, 1);
+                company1.addUser(user);
                 transaction.commit();
             }
         }

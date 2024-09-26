@@ -2,10 +2,12 @@ package com.dmdev.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.SortNatural;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 @Data
 @NoArgsConstructor
@@ -24,7 +26,9 @@ public class Company {
 
     @Builder.Default
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<User> users = new HashSet<>();
+//    @OrderBy("username DESC")
+    @SortNatural
+    private Set<User> users = new TreeSet<>();
 
     public void addUser(User user) {
         users.add(user);

@@ -14,6 +14,20 @@ import java.util.Set;
 public class HibernateRunnerTest {
 
     @Test
+    void checkOrdering(){
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Company company = session.get(Company.class, 1);
+
+            company.getUsers().forEach(System.out::println);
+
+            session.getTransaction().commit();
+        }
+    }
+
+    @Test
     void checkManyToMany(){
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
              Session session = sessionFactory.openSession()) {
