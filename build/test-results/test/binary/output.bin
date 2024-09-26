@@ -1,8 +1,8 @@
-c[21:39:14,143] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.6.0.Final
-v[21:39:14,428] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
-è[21:39:14,545] WARN [org.hibernate.orm.connections.pooling: 86] HHH10001002: Using built-in connection pool (not intended for production use)
-›[21:39:14,850] WARN [org.hibernate.orm.deprecation: 153] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-][21:39:14,868] INFO [org.hibernate.orm.connections.pooling: 158] HHH10001005: Database info:
+c[21:56:20,480] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.6.0.Final
+v[21:56:20,763] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+è[21:56:20,878] WARN [org.hibernate.orm.connections.pooling: 86] HHH10001002: Using built-in connection pool (not intended for production use)
+›[21:56:21,230] WARN [org.hibernate.orm.deprecation: 153] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+][21:56:21,264] INFO [org.hibernate.orm.connections.pooling: 158] HHH10001005: Database info:
 @	Database JDBC URL [jdbc:postgresql://localhost:5432/hibernate]
 (	Database driver: org.postgresql.Driver
 	Database version: 16.3
@@ -10,7 +10,7 @@
 $	Isolation level: undefined/unknown
 	Minimum pool size: 1
 	Maximum pool size: 20
-⁄[21:39:16,386] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 59] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+⁄[21:56:22,749] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 59] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     select
         c1_0.id,
@@ -23,6 +23,7 @@
 Hibernate: 
     select
         u1_0.company_id,
+        u1_0.username,
         u1_0.id,
         u1_0.birth_date,
         u1_0.firstname,
@@ -30,8 +31,7 @@
         p1_0.id,
         p1_0.language,
         p1_0.street,
-        u1_0.role,
-        u1_0.username 
+        u1_0.role 
 
     from
         public.users u1_0 
@@ -40,6 +40,7 @@
 &            on u1_0.id=p1_0.user_id 
     where
         u1_0.company_id=?
+öUser(id=6, username=aivan2@gmail.com, personalInfo=PersonalInfo(firstname=Alesha, lastname=Ivanov, birthDate=Birthday[birthday=2000-01-20]), role=ADMIN)
 óUser(id=1, username=ivan2@gmail.com, personalInfo=PersonalInfo(firstname=Ivan, lastname=Ivanov, birthDate=Birthday[birthday=2000-01-20]), role=ADMIN)
 òUser(id=5, username=nivan2@gmail.com, personalInfo=PersonalInfo(firstname=Ivan, lastname=Ivanov, birthDate=Birthday[birthday=2000-01-20]), role=ADMIN)
 DUser(id=4, username=test4@gmail.com, personalInfo=null, role=null)

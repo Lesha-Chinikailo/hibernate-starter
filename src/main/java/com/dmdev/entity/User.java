@@ -15,7 +15,7 @@ import java.util.List;
 @EqualsAndHashCode(of = "username")
 @Entity
 @Table(name = "users", schema = "public")
-public class User implements Comparable<User> {
+public class User { //implements Comparable<User>
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,8 +42,8 @@ public class User implements Comparable<User> {
     @OneToMany(mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<UserChat>();
 
-    @Override
-    public int compareTo(User o) {
-        return username.compareTo(o.username);
-    }
+//    @Override
+//    public int compareTo(User o) {
+//        return username.compareTo(o.username);
+//    }
 }

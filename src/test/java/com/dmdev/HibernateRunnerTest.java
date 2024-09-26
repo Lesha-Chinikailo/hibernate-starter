@@ -21,7 +21,7 @@ public class HibernateRunnerTest {
 
             Company company = session.get(Company.class, 1);
 
-            company.getUsers().forEach(System.out::println);
+            company.getUsers().forEach((k, v) -> System.out.println(v));
 
             session.getTransaction().commit();
         }
@@ -86,7 +86,7 @@ public class HibernateRunnerTest {
             session.beginTransaction();
 
             Company company = session.getReference(Company.class, 3);
-            company.getUsers().removeIf(user -> user.getId().equals(3L));
+//            company.getUsers().removeIf(user -> user.getId().equals(3L));
 
 
             session.getTransaction().commit();
@@ -105,8 +105,8 @@ public class HibernateRunnerTest {
 
             session.getTransaction().commit();
         }
-        Set<User> users = company.getUsers();
-        System.out.println(users.size());
+//        Set<User> users = company.getUsers();
+//        System.out.println(users.size());
     }
 
 

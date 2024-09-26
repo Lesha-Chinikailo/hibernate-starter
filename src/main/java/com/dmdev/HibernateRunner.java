@@ -21,9 +21,9 @@ public class HibernateRunner {
                 .name("Google")
                 .build();
         User user = User.builder()
-            .username("nivan2@gmail.com")
+            .username("aivan2@gmail.com")
             .personalInfo(PersonalInfo.builder()
-                    .firstname("Ivan")
+                    .firstname("Alesha")
                     .lastname("Ivanov")
                     .birthDate(new Birthday(LocalDate.of(2000, 1, 20)))
                     .build())
