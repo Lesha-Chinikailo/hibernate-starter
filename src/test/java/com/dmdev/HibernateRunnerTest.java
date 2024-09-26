@@ -1,8 +1,6 @@
 package com.dmdev;
 
-import com.dmdev.entity.Company;
-import com.dmdev.entity.Profile;
-import com.dmdev.entity.User;
+import com.dmdev.entity.*;
 import com.dmdev.util.HibernateUtil;
 import lombok.Cleanup;
 import org.hibernate.Session;
@@ -10,9 +8,40 @@ import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.util.Set;
 
 public class HibernateRunnerTest {
+
+    @Test
+    void checkManyToMany(){
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            User user = session.get(User.class, 4L);
+            Chat chat = session.get(Chat.class, 1L);
+
+            UserChat userChat = UserChat.builder()
+                    .createdAt(Instant.now())
+                    .createdBy(user.getUsername())
+                    .build();
+            userChat.setUser(user);
+            userChat.setChat(chat);
+
+            session.persist(userChat);
+
+
+//            Chat chat = Chat.builder()
+//                    .name("dmdev")
+//                    .build();
+//            session.persist(chat);
+
+//
+
+            session.getTransaction().commit();
+        }
+    }
 
     @Test
     void checkOneToOne(){

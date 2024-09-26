@@ -4,11 +4,14 @@ import com.dmdev.converter.BirthdayConverter;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString(exclude = {"company", "profile"})
+@ToString(exclude = {"company", "profile", "userChats"})
 @EqualsAndHashCode(of = "username")
 @Entity
 @Table(name = "users", schema = "public")
@@ -34,4 +37,8 @@ public class User {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Profile profile;
+
+    @Builder.Default
+    @OneToMany(mappedBy = "user")
+    private List<UserChat> userChats = new ArrayList<UserChat>();
 }
