@@ -1,6 +1,7 @@
 package com.dmdev;
 
 import com.dmdev.entity.*;
+import com.dmdev.util.HibernateTestUtil;
 import com.dmdev.util.HibernateUtil;
 import lombok.Cleanup;
 import org.hibernate.Session;
@@ -12,6 +13,21 @@ import java.time.Instant;
 import java.util.Set;
 
 public class HibernateRunnerTest {
+
+    @Test
+    void checkPostgresDocker(){
+        try (SessionFactory sessionFactory = HibernateTestUtil.buildSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Company company = Company.builder()
+                    .name("Google")
+                    .build();
+            session.persist(company);
+
+            session.getTransaction().commit();
+        }
+    }
 
     @Test
     void checkOrdering(){

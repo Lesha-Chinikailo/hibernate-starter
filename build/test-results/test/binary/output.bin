@@ -1,46 +1,130 @@
-c[21:56:20,480] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.6.0.Final
-v[21:56:20,763] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
-[21:56:20,878] WARN [org.hibernate.orm.connections.pooling: 86] HHH10001002: Using built-in connection pool (not intended for production use)
-Ý[21:56:21,230] WARN [org.hibernate.orm.deprecation: 153] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-][21:56:21,264] INFO [org.hibernate.orm.connections.pooling: 158] HHH10001005: Database info:
-@	Database JDBC URL [jdbc:postgresql://localhost:5432/hibernate]
+|[22:41:37,754] INFO [org.testcontainers.images.PullPolicy: 59] Image pull policy will be performed by: DefaultPullPolicy()
+ð[22:41:37,771] INFO [org.testcontainers.utility.ImageNameSubstitutor: 55] Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+b[22:41:37,775] INFO [org.testcontainers.DockerClientFactory: 148] Testcontainers version: 1.20.1
+×[22:41:38,021] INFO [org.testcontainers.dockerclient.DockerClientProviderStrategy: 383] Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+«[22:41:38,338] INFO [org.testcontainers.dockerclient.DockerClientProviderStrategy: 293] Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+g[22:41:38,353] INFO [org.testcontainers.DockerClientFactory: 206] Docker host IP address is localhost
+X[22:41:38,376] INFO [org.testcontainers.DockerClientFactory: 213] Connected to docker: 
+  Server Version: 27.1.1
+  API Version: 1.46
+#  Operating System: Docker Desktop
+  Total Memory: 7818 MB
+q[22:41:38,420] INFO [tc.testcontainers/ryuk:0.8.1: 387] Creating container for image: testcontainers/ryuk:0.8.1
+¹[22:41:39,254] INFO [org.testcontainers.utility.RegistryAuthLocator: 292] Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+«[22:41:39,622] INFO [tc.testcontainers/ryuk:0.8.1: 451] Container testcontainers/ryuk:0.8.1 is starting: dc2b24267c599b71382233a4c0fa95ba5bb3018d3e6741f8aee5205b3e1db965
+u[22:41:40,338] INFO [tc.testcontainers/ryuk:0.8.1: 541] Container testcontainers/ryuk:0.8.1 started in PT1.9173882S
+™[22:41:40,346] INFO [org.testcontainers.utility.RyukResourceReaper: 43] Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+Z[22:41:40,346] INFO [org.testcontainers.DockerClientFactory: 243] Checking the system...
+u[22:41:40,348] INFO [org.testcontainers.DockerClientFactory: 264] ?? Docker server version should be at least 1.6.0
+U[22:41:40,349] INFO [tc.postgres:13: 387] Creating container for image: postgres:13
+[22:41:40,619] INFO [tc.postgres:13: 451] Container postgres:13 is starting: a47fcdb79bc40caf26023b7ad3d428631c88c423275b59e3f1fc92446755acc7
+Y[22:41:46,587] INFO [tc.postgres:13: 541] Container postgres:13 started in PT6.2379438S
+ƒ[22:41:46,590] INFO [tc.postgres:13: 219] Container is started (JDBC URL: jdbc:postgresql://localhost:52765/test?loggerLevel=OFF)
+c[22:41:46,704] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.6.0.Final
+v[22:41:46,987] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[22:41:47,105] WARN [org.hibernate.orm.connections.pooling: 86] HHH10001002: Using built-in connection pool (not intended for production use)
+Ý[22:41:47,262] WARN [org.hibernate.orm.deprecation: 153] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+][22:41:47,301] INFO [org.hibernate.orm.connections.pooling: 158] HHH10001005: Database info:
+L	Database JDBC URL [jdbc:postgresql://localhost:52765/test?loggerLevel=OFF]
 (	Database driver: org.postgresql.Driver
-	Database version: 16.3
+	Database version: 13.16
 	Autocommit mode: false
 $	Isolation level: undefined/unknown
 	Minimum pool size: 1
 	Maximum pool size: 20
-Ú[21:56:22,749] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 59] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Ú[22:41:48,820] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 59] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
-    select
-        c1_0.id,
-        c1_0.name 
-
-    from
-        company c1_0 
-    where
-        c1_0.id=?
+'    set client_min_messages = WARNING
+‘[22:41:48,840] INFO [org.hibernate.orm.connections.access: 52] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@323eecf8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 Hibernate: 
-    select
-        u1_0.company_id,
-        u1_0.username,
-        u1_0.id,
-        u1_0.birth_date,
-        u1_0.firstname,
-        u1_0.lastname,
-        p1_0.id,
-        p1_0.language,
-        p1_0.street,
-        u1_0.role 
+)    alter table if exists public.users 
+>       drop constraint if exists FKbwv4uspmyi7xqjwcrgxow361t
+Hibernate: 
+/    drop table if exists public.users cascade
+Hibernate: 
+$    alter table if exists profile 
+>       drop constraint if exists FKs14jvsf9tqrcnly0afsv0ngwv
+Hibernate: 
+'    alter table if exists users_chat 
+>       drop constraint if exists FKsqcmgoiby6k7d66sx1nxb5835
+Hibernate: 
+'    alter table if exists users_chat 
+>       drop constraint if exists FK4n5ew9rhowx26b46nwirrcfdi
+Hibernate: 
+'    drop table if exists chat cascade
+Hibernate: 
+*    drop table if exists company cascade
+Hibernate: 
+*    drop table if exists profile cascade
+Hibernate: 
+-    drop table if exists users_chat cascade
+Hibernate: 
+!    create table public.users (
+        birth_date date,
+        company_id integer,
+5        id bigint generated by default as identity,
+!        firstname varchar(255),
+         lastname varchar(255),
+=        role varchar(255) check (role in ('ADMIN','ROLE')),
+'        username varchar(255) unique,
+        primary key (id)
+    )
+‘[22:41:48,867] INFO [org.hibernate.orm.connections.access: 52] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1479ed5a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: 
+    create table chat (
+5        id bigint generated by default as identity,
+,        name varchar(255) not null unique,
+        primary key (id)
+    )
+Hibernate: 
+    create table company (
+6        id integer generated by default as identity,
+        name varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table profile (
+5        id bigint generated by default as identity,
+         user_id bigint unique,
+         language varchar(255),
+        street varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table users_chat (
+        chat_id bigint,
+1        created_at timestamp(6) with time zone,
+5        id bigint generated by default as identity,
+        user_id bigint,
+"        created_by varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+)    alter table if exists public.users 
+4       add constraint FKbwv4uspmyi7xqjwcrgxow361t 
+"       foreign key (company_id) 
+       references company
+Hibernate: 
+$    alter table if exists profile 
+4       add constraint FKs14jvsf9tqrcnly0afsv0ngwv 
+       foreign key (user_id) 
+        references public.users
+Hibernate: 
+'    alter table if exists users_chat 
+4       add constraint FKsqcmgoiby6k7d66sx1nxb5835 
+       foreign key (chat_id) 
+       references chat
+Hibernate: 
+'    alter table if exists users_chat 
+4       add constraint FK4n5ew9rhowx26b46nwirrcfdi 
+       foreign key (user_id) 
+        references public.users
+Hibernate: 
+    insert 
 
-    from
-        public.users u1_0 
-    left join
-        profile p1_0 
-&            on u1_0.id=p1_0.user_id 
-    where
-        u1_0.company_id=?
-šUser(id=6, username=aivan2@gmail.com, personalInfo=PersonalInfo(firstname=Alesha, lastname=Ivanov, birthDate=Birthday[birthday=2000-01-20]), role=ADMIN)
-—User(id=1, username=ivan2@gmail.com, personalInfo=PersonalInfo(firstname=Ivan, lastname=Ivanov, birthDate=Birthday[birthday=2000-01-20]), role=ADMIN)
-˜User(id=5, username=nivan2@gmail.com, personalInfo=PersonalInfo(firstname=Ivan, lastname=Ivanov, birthDate=Birthday[birthday=2000-01-20]), role=ADMIN)
-DUser(id=4, username=test4@gmail.com, personalInfo=null, role=null)
+    into
+        company
+        (name) 
+    values
+        (?) 
+    returning id
