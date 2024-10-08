@@ -25,6 +25,25 @@ public class HibernateRunnerTest {
                     .build();
             session.persist(company);
 
+            Programmer programmer = Programmer.builder()
+                    .username("ivan1@gmail.com")
+                    .language(Language.Ruby)
+                    .company(company)
+                    .build();
+            session.persist(programmer);
+
+            Manager manager = Manager.builder()
+                    .username("sveta@gmail.com")
+                    .projectName("Starter")
+                    .company(company)
+                    .build();
+            session.persist(manager);
+
+            session.flush();
+
+            Programmer programmer1 = session.get(Programmer.class, 1L);
+            User user = session.get(User.class, 2L);
+
             session.getTransaction().commit();
         }
     }

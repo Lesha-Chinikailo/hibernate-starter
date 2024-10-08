@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dmdev.HibernateRunnerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-01T19:41:37" hostname="DESKTOP-501ABTG" time="11.467">
+<testsuite name="com.dmdev.HibernateRunnerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-07T15:09:36" hostname="DESKTOP-501ABTG" time="113.349">
   <properties/>
-  <testcase name="checkPostgresDocker()" classname="com.dmdev.HibernateRunnerTest" time="11.467"/>
-  <system-out><![CDATA[[22:41:37,754] INFO [org.testcontainers.images.PullPolicy: 59] Image pull policy will be performed by: DefaultPullPolicy()
-[22:41:37,771] INFO [org.testcontainers.utility.ImageNameSubstitutor: 55] Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-[22:41:37,775] INFO [org.testcontainers.DockerClientFactory: 148] Testcontainers version: 1.20.1
-[22:41:38,021] INFO [org.testcontainers.dockerclient.DockerClientProviderStrategy: 383] Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
-[22:41:38,338] INFO [org.testcontainers.dockerclient.DockerClientProviderStrategy: 293] Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
-[22:41:38,353] INFO [org.testcontainers.DockerClientFactory: 206] Docker host IP address is localhost
-[22:41:38,376] INFO [org.testcontainers.DockerClientFactory: 213] Connected to docker: 
+  <testcase name="checkPostgresDocker()" classname="com.dmdev.HibernateRunnerTest" time="113.349"/>
+  <system-out><![CDATA[[18:09:37,125] INFO [org.testcontainers.images.PullPolicy: 59] Image pull policy will be performed by: DefaultPullPolicy()
+[18:09:37,139] INFO [org.testcontainers.utility.ImageNameSubstitutor: 55] Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+[18:09:37,160] INFO [org.testcontainers.DockerClientFactory: 148] Testcontainers version: 1.20.1
+[18:09:37,523] INFO [org.testcontainers.dockerclient.DockerClientProviderStrategy: 383] Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+[18:09:38,122] INFO [org.testcontainers.dockerclient.DockerClientProviderStrategy: 293] Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+[18:09:38,128] INFO [org.testcontainers.DockerClientFactory: 206] Docker host IP address is localhost
+[18:09:38,157] INFO [org.testcontainers.DockerClientFactory: 213] Connected to docker: 
   Server Version: 27.1.1
   API Version: 1.46
   Operating System: Docker Desktop
   Total Memory: 7818 MB
-[22:41:38,420] INFO [tc.testcontainers/ryuk:0.8.1: 387] Creating container for image: testcontainers/ryuk:0.8.1
-[22:41:39,254] INFO [org.testcontainers.utility.RegistryAuthLocator: 292] Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
-[22:41:39,622] INFO [tc.testcontainers/ryuk:0.8.1: 451] Container testcontainers/ryuk:0.8.1 is starting: dc2b24267c599b71382233a4c0fa95ba5bb3018d3e6741f8aee5205b3e1db965
-[22:41:40,338] INFO [tc.testcontainers/ryuk:0.8.1: 541] Container testcontainers/ryuk:0.8.1 started in PT1.9173882S
-[22:41:40,346] INFO [org.testcontainers.utility.RyukResourceReaper: 43] Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-[22:41:40,346] INFO [org.testcontainers.DockerClientFactory: 243] Checking the system...
-[22:41:40,348] INFO [org.testcontainers.DockerClientFactory: 264] ?? Docker server version should be at least 1.6.0
-[22:41:40,349] INFO [tc.postgres:13: 387] Creating container for image: postgres:13
-[22:41:40,619] INFO [tc.postgres:13: 451] Container postgres:13 is starting: a47fcdb79bc40caf26023b7ad3d428631c88c423275b59e3f1fc92446755acc7
-[22:41:46,587] INFO [tc.postgres:13: 541] Container postgres:13 started in PT6.2379438S
-[22:41:46,590] INFO [tc.postgres:13: 219] Container is started (JDBC URL: jdbc:postgresql://localhost:52765/test?loggerLevel=OFF)
-[22:41:46,704] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.6.0.Final
-[22:41:46,987] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
-[22:41:47,105] WARN [org.hibernate.orm.connections.pooling: 86] HHH10001002: Using built-in connection pool (not intended for production use)
-[22:41:47,262] WARN [org.hibernate.orm.deprecation: 153] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[22:41:47,301] INFO [org.hibernate.orm.connections.pooling: 158] HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:52765/test?loggerLevel=OFF]
+[18:09:38,207] INFO [tc.testcontainers/ryuk:0.8.1: 387] Creating container for image: testcontainers/ryuk:0.8.1
+[18:09:38,681] INFO [org.testcontainers.utility.RegistryAuthLocator: 292] Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+[18:09:38,998] INFO [tc.testcontainers/ryuk:0.8.1: 451] Container testcontainers/ryuk:0.8.1 is starting: ff598cd049353bf5517c11744dba479256bf4e161c941d63f1b01365452c2bbf
+[18:09:39,882] INFO [tc.testcontainers/ryuk:0.8.1: 541] Container testcontainers/ryuk:0.8.1 started in PT1.673837S
+[18:09:39,893] INFO [org.testcontainers.utility.RyukResourceReaper: 43] Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+[18:09:39,894] INFO [org.testcontainers.DockerClientFactory: 243] Checking the system...
+[18:09:39,897] INFO [org.testcontainers.DockerClientFactory: 264] ?? Docker server version should be at least 1.6.0
+[18:09:39,898] INFO [tc.postgres:13: 387] Creating container for image: postgres:13
+[18:09:40,518] INFO [tc.postgres:13: 451] Container postgres:13 is starting: 88b5ca7ad0b5e81fc803e3ae2f49b75172f8461a670f3a36e98fae2a0316324e
+[18:09:46,470] INFO [tc.postgres:13: 541] Container postgres:13 started in PT6.571983S
+[18:09:46,473] INFO [tc.postgres:13: 219] Container is started (JDBC URL: jdbc:postgresql://localhost:59135/test?loggerLevel=OFF)
+[18:09:46,707] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.6.0.Final
+[18:09:47,473] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[18:09:48,010] WARN [org.hibernate.orm.connections.pooling: 86] HHH10001002: Using built-in connection pool (not intended for production use)
+[18:09:48,683] WARN [org.hibernate.orm.deprecation: 153] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[18:09:48,770] INFO [org.hibernate.orm.connections.pooling: 158] HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:59135/test?loggerLevel=OFF]
 	Database driver: org.postgresql.Driver
 	Database version: 13.16
 	Autocommit mode: false
 	Isolation level: undefined/unknown
 	Minimum pool size: 1
 	Maximum pool size: 20
-[22:41:48,820] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 59] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[18:09:53,164] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 59] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     set client_min_messages = WARNING
-[22:41:48,840] INFO [org.hibernate.orm.connections.access: 52] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@323eecf8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[18:09:53,194] INFO [org.hibernate.orm.connections.access: 52] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@21579b35] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 Hibernate: 
     alter table if exists public.users 
        drop constraint if exists FKbwv4uspmyi7xqjwcrgxow361t
@@ -67,13 +67,16 @@ Hibernate:
         birth_date date,
         company_id integer,
         id bigint generated by default as identity,
+        type varchar(31) not null,
         firstname varchar(255),
+        language varchar(255) check (language in ('Java','C','Ruby')),
         lastname varchar(255),
+        project_name varchar(255),
         role varchar(255) check (role in ('ADMIN','ROLE')),
         username varchar(255) unique,
         primary key (id)
     )
-[22:41:48,867] INFO [org.hibernate.orm.connections.access: 52] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1479ed5a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[18:09:53,226] INFO [org.hibernate.orm.connections.access: 52] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@77d3c3d7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 Hibernate: 
     create table chat (
         id bigint generated by default as identity,
@@ -130,6 +133,22 @@ Hibernate:
         (name) 
     values
         (?) 
+    returning id
+Hibernate: 
+    insert 
+    into
+        public.users
+        (company_id, birth_date, firstname, lastname, role, username, language, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, 'programmer') 
+    returning id
+Hibernate: 
+    insert 
+    into
+        public.users
+        (company_id, birth_date, firstname, lastname, role, username, project_name, type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, 'manager') 
     returning id
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
