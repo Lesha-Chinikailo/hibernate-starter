@@ -1,8 +1,8 @@
 package com.dmdev.util;
 
 import com.dmdev.converter.BirthdayConverter;
-import com.dmdev.entity.Manager;
-import com.dmdev.entity.Programmer;
+import com.dmdev.entity.Birthday;
+import com.dmdev.entity.Payment;
 import com.dmdev.entity.User;
 import lombok.experimental.UtilityClass;
 import org.hibernate.SessionFactory;
@@ -23,8 +23,9 @@ public class HibernateUtil {
         Configuration configuration = new Configuration();
         configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
         configuration.addAnnotatedClass(User.class);
-        configuration.addAnnotatedClass(Programmer.class);
-        configuration.addAnnotatedClass(Manager.class);
+        configuration.addAnnotatedClass(Payment.class);
+//        configuration.addAnnotatedClass(Programmer.class);
+//        configuration.addAnnotatedClass(Manager.class);
         configuration.addAttributeConverter(new BirthdayConverter());
         return configuration;
     }

@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dmdev.dao.UserDaoTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-10-11T11:39:08" hostname="DESKTOP-501ABTG" time="0.338">
+  <properties/>
+  <testcase name="findAveragePaymentAmountByFirstAndLastNames()" classname="com.dmdev.dao.UserDaoTest" time="0.159"/>
+  <testcase name="findLimitedUsersOrderedByBirthday()" classname="com.dmdev.dao.UserDaoTest" time="0.051"/>
+  <testcase name="findAll()" classname="com.dmdev.dao.UserDaoTest" time="0.022"/>
+  <testcase name="findAllPaymentsByCompanyName()" classname="com.dmdev.dao.UserDaoTest" time="0.036"/>
+  <testcase name="findAllByFirstName()" classname="com.dmdev.dao.UserDaoTest" time="0.016"/>
+  <testcase name="isItPossible()" classname="com.dmdev.dao.UserDaoTest" time="0.021"/>
+  <testcase name="findCompanyNamesWithAvgUserPaymentsOrderedByCompanyName()" classname="com.dmdev.dao.UserDaoTest" time="0.011"/>
+  <testcase name="findAllByCompanyName()" classname="com.dmdev.dao.UserDaoTest" time="0.014"/>
+  <system-out><![CDATA[[14:38:57,516] INFO [org.testcontainers.images.PullPolicy: 59] Image pull policy will be performed by: DefaultPullPolicy()
+[14:38:57,516] INFO [org.testcontainers.utility.ImageNameSubstitutor: 55] Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+[14:38:57,532] INFO [org.testcontainers.DockerClientFactory: 148] Testcontainers version: 1.20.1
+[14:38:57,746] INFO [org.testcontainers.dockerclient.DockerClientProviderStrategy: 383] Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+[14:38:58,126] INFO [org.testcontainers.dockerclient.DockerClientProviderStrategy: 293] Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+[14:38:58,126] INFO [org.testcontainers.DockerClientFactory: 206] Docker host IP address is localhost
+[14:38:58,150] INFO [org.testcontainers.DockerClientFactory: 213] Connected to docker: 
+  Server Version: 27.1.1
+  API Version: 1.46
+  Operating System: Docker Desktop
+  Total Memory: 7818 MB
+[14:38:58,192] INFO [tc.testcontainers/ryuk:0.8.1: 387] Creating container for image: testcontainers/ryuk:0.8.1
+[14:38:58,370] INFO [org.testcontainers.utility.RegistryAuthLocator: 292] Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+[14:38:58,735] INFO [tc.testcontainers/ryuk:0.8.1: 451] Container testcontainers/ryuk:0.8.1 is starting: 7dacc8352f1e72368756975fe3796baa67196666fd1b58b39ddcdbbf1fd5e620
+[14:38:59,737] INFO [tc.testcontainers/ryuk:0.8.1: 541] Container testcontainers/ryuk:0.8.1 started in PT1.5437544S
+[14:38:59,744] INFO [org.testcontainers.utility.RyukResourceReaper: 43] Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+[14:38:59,745] INFO [org.testcontainers.DockerClientFactory: 243] Checking the system...
+[14:38:59,746] INFO [org.testcontainers.DockerClientFactory: 264] ?? Docker server version should be at least 1.6.0
+[14:38:59,747] INFO [tc.postgres:13: 387] Creating container for image: postgres:13
+[14:39:00,125] INFO [tc.postgres:13: 451] Container postgres:13 is starting: b90b5dde828e62951f269f5cced0bfd4e1cb60deb457ea77c6e5c545e5d47c84
+[14:39:06,625] INFO [tc.postgres:13: 541] Container postgres:13 started in PT6.878396S
+[14:39:06,628] INFO [tc.postgres:13: 219] Container is started (JDBC URL: jdbc:postgresql://localhost:58681/test?loggerLevel=OFF)
+[14:39:06,698] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.5.7.Final
+[14:39:07,151] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[14:39:07,258] WARN [org.hibernate.orm.connections.pooling: 72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[14:39:07,258] INFO [org.hibernate.orm.connections.pooling: 115] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:58681/test?loggerLevel=OFF]
+[14:39:07,258] INFO [org.hibernate.orm.connections.pooling: 124] HHH10001001: Connection properties: {password=****, user=test}
+[14:39:07,258] INFO [org.hibernate.orm.connections.pooling: 129] HHH10001003: Autocommit mode: false
+[14:39:07,273] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 274] HHH000115: Hibernate connection pool size: 20 (min=1)
+[14:39:07,385] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[14:39:07,577] INFO [Hibernate Types: 283] This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Hibernate: 
+    
+    alter table if exists public.users 
+       drop constraint if exists FKbwv4uspmyi7xqjwcrgxow361t
+[14:39:08,260] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3fef1e6b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[14:39:08,274] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,274] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] relation "users" does not exist, skipping
+Hibernate: 
+    
+    drop table if exists public.users cascade
+[14:39:08,277] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,277] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] table "users" does not exist, skipping
+Hibernate: 
+    
+    alter table if exists payment 
+       drop constraint if exists FKb2u6muqxjvdfbib5u91afawcy
+[14:39:08,280] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,281] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] relation "payment" does not exist, skipping
+Hibernate: 
+    
+    alter table if exists profile 
+       drop constraint if exists FKs14jvsf9tqrcnly0afsv0ngwv
+[14:39:08,283] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,283] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] relation "profile" does not exist, skipping
+Hibernate: 
+    
+    alter table if exists users_chat 
+       drop constraint if exists FKsqcmgoiby6k7d66sx1nxb5835
+[14:39:08,286] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,286] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] relation "users_chat" does not exist, skipping
+Hibernate: 
+    
+    alter table if exists users_chat 
+       drop constraint if exists FK4n5ew9rhowx26b46nwirrcfdi
+[14:39:08,288] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,289] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] relation "users_chat" does not exist, skipping
+Hibernate: 
+    
+    drop table if exists chat cascade
+[14:39:08,291] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,292] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] table "chat" does not exist, skipping
+Hibernate: 
+    
+    drop table if exists company cascade
+[14:39:08,294] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,294] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] table "company" does not exist, skipping
+Hibernate: 
+    
+    drop table if exists payment cascade
+[14:39:08,297] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,298] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] table "payment" does not exist, skipping
+Hibernate: 
+    
+    drop table if exists profile cascade
+[14:39:08,300] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,301] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] table "profile" does not exist, skipping
+Hibernate: 
+    
+    drop table if exists users_chat cascade
+[14:39:08,303] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 230] SQL Warning Code: 0, SQLState: 00000
+[14:39:08,303] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 231] table "users_chat" does not exist, skipping
+Hibernate: 
+    
+    create table public.users (
+       id int8 generated by default as identity,
+        info uuid,
+        birth_date date,
+        firstname varchar(255),
+        lastname varchar(255),
+        role varchar(255),
+        username varchar(255),
+        company_id int4,
+        primary key (id)
+    )
+[14:39:08,308] INFO [org.hibernate.orm.connections.access: 48] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@26c59348] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: 
+    
+    alter table if exists public.users 
+       add constraint UK_r43af9ap4edm43mmtq01oddj6 unique (username)
+Hibernate: 
+    
+    create table chat (
+       id int8 generated by default as identity,
+        name varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table company (
+       id int4 generated by default as identity,
+        name varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table payment (
+       id int8 generated by default as identity,
+        amount int4 not null,
+        receiver_id int8 not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table profile (
+       id int8 generated by default as identity,
+        language varchar(255),
+        street varchar(255),
+        user_id int8,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table users_chat (
+       id int8 generated by default as identity,
+        created_at timestamp,
+        created_by varchar(255),
+        chat_id int8,
+        user_id int8,
+        primary key (id)
+    )
+Hibernate: 
+    
+    alter table if exists chat 
+       add constraint UK_dk0m5eenxaf7wywks6mj0381x unique (name)
+Hibernate: 
+    
+    alter table if exists public.users 
+       add constraint FKbwv4uspmyi7xqjwcrgxow361t 
+       foreign key (company_id) 
+       references company
+Hibernate: 
+    
+    alter table if exists payment 
+       add constraint FKb2u6muqxjvdfbib5u91afawcy 
+       foreign key (receiver_id) 
+       references public.users
+Hibernate: 
+    
+    alter table if exists profile 
+       add constraint FKs14jvsf9tqrcnly0afsv0ngwv 
+       foreign key (user_id) 
+       references public.users
+Hibernate: 
+    
+    alter table if exists users_chat 
+       add constraint FKsqcmgoiby6k7d66sx1nxb5835 
+       foreign key (chat_id) 
+       references chat
+Hibernate: 
+    
+    alter table if exists users_chat 
+       add constraint FK4n5ew9rhowx26b46nwirrcfdi 
+       foreign key (user_id) 
+       references public.users
+[14:39:08,353] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: 
+    insert 
+    into
+        company
+        (name) 
+    values
+        (?)
+Hibernate: 
+    insert 
+    into
+        company
+        (name) 
+    values
+        (?)
+Hibernate: 
+    insert 
+    into
+        company
+        (name) 
+    values
+        (?)
+Hibernate: 
+    insert 
+    into
+        public.users
+        (company_id, info, birth_date, firstname, lastname, role, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        public.users
+        (company_id, info, birth_date, firstname, lastname, role, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        public.users
+        (company_id, info, birth_date, firstname, lastname, role, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        public.users
+        (company_id, info, birth_date, firstname, lastname, role, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        public.users
+        (company_id, info, birth_date, firstname, lastname, role, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        payment
+        (amount, receiver_id) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        avg(payment0_.amount) as col_0_0_ 
+    from
+        payment payment0_ 
+    inner join
+        public.users user1_ 
+            on payment0_.receiver_id=user1_.id 
+    where
+        user1_.firstname=? 
+        and user1_.lastname=?
+Hibernate: 
+    select
+        user0_.id as id1_0_,
+        user0_.company_id as company_8_0_,
+        user0_.info as info2_0_,
+        user0_.birth_date as birth_da3_0_,
+        user0_.firstname as firstnam4_0_,
+        user0_.lastname as lastname5_0_,
+        user0_.role as role6_0_,
+        user0_.username as username7_0_ 
+    from
+        public.users user0_ 
+    order by
+        user0_.birth_date asc limit ?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        user0_.id as id1_0_,
+        user0_.company_id as company_8_0_,
+        user0_.info as info2_0_,
+        user0_.birth_date as birth_da3_0_,
+        user0_.firstname as firstnam4_0_,
+        user0_.lastname as lastname5_0_,
+        user0_.role as role6_0_,
+        user0_.username as username7_0_ 
+    from
+        public.users user0_
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        payment0_.id as id1_3_,
+        payment0_.amount as amount2_3_,
+        payment0_.receiver_id as receiver3_3_ 
+    from
+        payment payment0_ 
+    inner join
+        public.users user1_ 
+            on payment0_.receiver_id=user1_.id 
+    inner join
+        company company2_ 
+            on user1_.company_id=company2_.id 
+    where
+        company2_.name=? 
+    order by
+        user1_.firstname,
+        payment0_.amount
+Hibernate: 
+    select
+        user0_.id as id1_0_0_,
+        user0_.company_id as company_8_0_0_,
+        user0_.info as info2_0_0_,
+        user0_.birth_date as birth_da3_0_0_,
+        user0_.firstname as firstnam4_0_0_,
+        user0_.lastname as lastname5_0_0_,
+        user0_.role as role6_0_0_,
+        user0_.username as username7_0_0_ 
+    from
+        public.users user0_ 
+    where
+        user0_.id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        user0_.id as id1_0_0_,
+        user0_.company_id as company_8_0_0_,
+        user0_.info as info2_0_0_,
+        user0_.birth_date as birth_da3_0_0_,
+        user0_.firstname as firstnam4_0_0_,
+        user0_.lastname as lastname5_0_0_,
+        user0_.role as role6_0_0_,
+        user0_.username as username7_0_0_ 
+    from
+        public.users user0_ 
+    where
+        user0_.id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        user0_.id as id1_0_,
+        user0_.company_id as company_8_0_,
+        user0_.info as info2_0_,
+        user0_.birth_date as birth_da3_0_,
+        user0_.firstname as firstnam4_0_,
+        user0_.lastname as lastname5_0_,
+        user0_.role as role6_0_,
+        user0_.username as username7_0_ 
+    from
+        public.users user0_ 
+    where
+        user0_.firstname=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        user0_.id as col_0_0_,
+        avg(payments1_.amount) as col_1_0_,
+        user0_.id as id1_0_,
+        user0_.company_id as company_8_0_,
+        user0_.info as info2_0_,
+        user0_.birth_date as birth_da3_0_,
+        user0_.firstname as firstnam4_0_,
+        user0_.lastname as lastname5_0_,
+        user0_.role as role6_0_,
+        user0_.username as username7_0_ 
+    from
+        public.users user0_ 
+    inner join
+        payment payments1_ 
+            on user0_.id=payments1_.receiver_id 
+    group by
+        user0_.id 
+    having
+        avg(payments1_.amount)>(
+            select
+                avg(payment2_.amount) 
+            from
+                payment payment2_
+        ) 
+    order by
+        user0_.firstname
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        company0_.name as col_0_0_,
+        avg(payments2_.amount) as col_1_0_ 
+    from
+        company company0_ 
+    inner join
+        public.users users1_ 
+            on company0_.id=users1_.company_id 
+    inner join
+        payment payments2_ 
+            on users1_.id=payments2_.receiver_id 
+    group by
+        company0_.name 
+    order by
+        company0_.name
+Hibernate: 
+    select
+        user0_.id as id1_0_,
+        user0_.company_id as company_8_0_,
+        user0_.info as info2_0_,
+        user0_.birth_date as birth_da3_0_,
+        user0_.firstname as firstnam4_0_,
+        user0_.lastname as lastname5_0_,
+        user0_.role as role6_0_,
+        user0_.username as username7_0_ 
+    from
+        public.users user0_ 
+    inner join
+        company company1_ 
+            on user0_.company_id=company1_.id 
+    where
+        company1_.name=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+Hibernate: 
+    select
+        profile0_.id as id1_4_1_,
+        profile0_.language as language2_4_1_,
+        profile0_.street as street3_4_1_,
+        profile0_.user_id as user_id4_4_1_,
+        user1_.id as id1_0_0_,
+        user1_.company_id as company_8_0_0_,
+        user1_.info as info2_0_0_,
+        user1_.birth_date as birth_da3_0_0_,
+        user1_.firstname as firstnam4_0_0_,
+        user1_.lastname as lastname5_0_0_,
+        user1_.role as role6_0_0_,
+        user1_.username as username7_0_0_ 
+    from
+        profile profile0_ 
+    left outer join
+        public.users user1_ 
+            on profile0_.user_id=user1_.id 
+    where
+        profile0_.user_id=?
+[14:39:08,861] INFO [org.hibernate.orm.connections.pooling: 502] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:58681/test?loggerLevel=OFF]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

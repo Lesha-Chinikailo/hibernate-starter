@@ -1,9 +1,10 @@
 package com.dmdev.entity;
 
-import jakarta.persistence.*;
+
 import lombok.*;
 import org.hibernate.annotations.SortNatural;
 
+import javax.persistence.*;
 import java.util.*;
 
 @Data
