@@ -32,8 +32,6 @@ public class QUser extends EntityPathBase<User> {
 
     public final QPersonalInfo personalInfo;
 
-    public final QProfile profile;
-
     public final EnumPath<Role> role = createEnum("role", Role.class);
 
     public final ListPath<UserChat, QUserChat> userChats = this.<UserChat, QUserChat>createList("userChats", UserChat.class, QUserChat.class, PathInits.DIRECT2);
@@ -60,7 +58,6 @@ public class QUser extends EntityPathBase<User> {
         super(type, metadata, inits);
         this.company = inits.isInitialized("company") ? new QCompany(forProperty("company")) : null;
         this.personalInfo = inits.isInitialized("personalInfo") ? new QPersonalInfo(forProperty("personalInfo")) : null;
-        this.profile = inits.isInitialized("profile") ? new QProfile(forProperty("profile"), inits.get("profile")) : null;
     }
 
 }

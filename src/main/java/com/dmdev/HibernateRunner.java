@@ -3,6 +3,7 @@ package com.dmdev;
 import com.dmdev.converter.BirthdayConverter;
 import com.dmdev.entity.*;
 import com.dmdev.util.HibernateUtil;
+import com.dmdev.util.TestDataImporter;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,34 +13,28 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Slf4j
 public class HibernateRunner {
 
     public static void main(String[] args) {
-        Company company = Company.builder()
-                .name("Google")
-                .build();
-        User user = User.builder()
-            .username("aivan2@gmail.com")
-            .personalInfo(PersonalInfo.builder()
-                    .firstname("Alesha")
-                    .lastname("Ivanov")
-                    .birthDate(LocalDate.of(2000, 1, 20))
-                    .build())
-            .role(Role.ADMIN)
-            .company(company)
-            .build();
-        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()){
-            Session session = sessionFactory.openSession();
-            try (session) {
-                Transaction transaction = session.beginTransaction();
 
-//                User user1 = session.get(User.class, 1L);
-                Company company1 = session.get(Company.class, 1);
-                company1.addUser(user);
-                transaction.commit();
-            }
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+        Session session = sessionFactory.openSession()){
+            TestDataImporter.importData(sessionFactory);
+            session.beginTransaction();
+
+            List<User> users = session.createQuery(
+                            "select u from User u " +
+                                    "join fetch u.payments p " +
+                                    "join fetch u.company c ", User.class)
+                    .list();
+            users.forEach(user -> System.out.println(user.getPayments().size()));
+            users.forEach(user -> System.out.println(user.getCompany().getName()));
+
+            session.getTransaction().commit();
+
         }
 
     }
