@@ -3,6 +3,7 @@ package com.dmdev.util;
 import com.dmdev.converter.BirthdayConverter;
 import com.dmdev.entity.Audit;
 import com.dmdev.entity.Payment;
+import com.dmdev.entity.Revision;
 import com.dmdev.entity.User;
 import com.dmdev.listener.AuditTableListener;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
@@ -40,6 +41,7 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Payment.class);
         configuration.addAnnotatedClass(Audit.class);
+        configuration.addAnnotatedClass(Revision .class);
 //        configuration.addAnnotatedClass(Programmer.class);
 //        configuration.addAnnotatedClass(Manager.class);
         configuration.addAttributeConverter(new BirthdayConverter());
