@@ -5,6 +5,7 @@ import com.dmdev.entity.Audit;
 import com.dmdev.entity.Payment;
 import com.dmdev.entity.User;
 import com.dmdev.listener.AuditTableListener;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.experimental.UtilityClass;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy;
@@ -21,7 +22,7 @@ public class HibernateUtil {
         configuration.configure();
 
         SessionFactory sessionFactory = configuration.buildSessionFactory();
-        registerListener(sessionFactory);
+//        registerListener(sessionFactory);
         return sessionFactory;
     }
 
@@ -42,6 +43,7 @@ public class HibernateUtil {
 //        configuration.addAnnotatedClass(Programmer.class);
 //        configuration.addAnnotatedClass(Manager.class);
         configuration.addAttributeConverter(new BirthdayConverter());
+        configuration.registerTypeOverride(new JsonBinaryType());
         return configuration;
     }
 }

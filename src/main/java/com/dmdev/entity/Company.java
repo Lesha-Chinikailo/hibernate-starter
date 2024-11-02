@@ -3,6 +3,8 @@ package com.dmdev.entity;
 
 import lombok.*;
 import org.hibernate.annotations.SortNatural;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
 import java.util.*;
@@ -14,6 +16,7 @@ import java.util.*;
 @EqualsAndHashCode(of = "name")
 @Builder
 @Entity
+@Audited
 public class Company {
 
     @Id
@@ -27,6 +30,7 @@ public class Company {
 //    @OrderBy("username DESC")
     @MapKey(name = "username")
     @SortNatural
+    @NotAudited
     private Map<String, User> users = new TreeMap<>();
 
     public void addUser(User user) {

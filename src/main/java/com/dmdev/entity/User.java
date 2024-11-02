@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -35,6 +37,7 @@ import static com.dmdev.util.StringsUtils.SPACE;
 @Entity
 @Table(name = "users", schema = "public")
 @TypeDef(name = "dmdev", typeClass = JsonBinaryType.class)
+@Audited
 public class User implements Comparable<User>, BaseEntity<Long> {
 
     @Id
@@ -64,10 +67,12 @@ public class User implements Comparable<User>, BaseEntity<Long> {
 //    )
 //    private Profile profile;
 
+    @NotAudited
     @Builder.Default
     @OneToMany(mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
 
+    @NotAudited
     @Builder.Default
     @OneToMany(mappedBy = "receiver")
     private List<Payment> payments = new ArrayList<>();
