@@ -9,6 +9,7 @@ import org.hibernate.ReplicationMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.annotations.QueryHints;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.envers.AuditReader;
 import org.hibernate.envers.AuditReaderFactory;
@@ -33,36 +34,47 @@ public class HibernateRunner {
     public static void main(String[] args) {
 
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()){
+            User user = null;
 
             try(Session session = sessionFactory.openSession()){
                 session.beginTransaction();
 
-                var payment = session.find(Payment.class, 1L);
-                payment.setAmount(payment.getAmount() + 10);
+                user = session.find(User.class, 1L);
+                user.getCompany().getName();
+                user.getUserChats().size();
+                User user2 = session.find(User.class, 1L);
+
+                session.createQuery("select p from Payment p where receiver.id = :userId", Payment.class)
+                        .setParameter("userId", 1L)
+                        .setCacheable(true)
+//                        .setCacheRegion("queries")
+//                        .setHint(QueryHints.CACHEABLE, true)
+                        .getResultList();
+                System.out.println(sessionFactory.getStatistics().getCacheRegionStatistics("Users"));
 
                 session.getTransaction().commit();
             }
 
-            try(Session session2 = sessionFactory.openSession()){
-                session2.beginTransaction();
+            try(Session session = sessionFactory.openSession()){
+                session.beginTransaction();
 
-                AuditReader auditReader = AuditReaderFactory.get(session2);
-                Payment oldPayment = auditReader.find(Payment.class, 1L, new Date(1730554471012L));
-                System.out.println();
+                User user3 = session.find(User.class, 1L);
+                user3.getCompany().getName();
+                user3.getUserChats().size();
 
-                session2.replicate(oldPayment, ReplicationMode.OVERWRITE);
-
-                auditReader.createQuery()
-                        .forEntitiesAtRevision(Payment.class, 400L)
-                        .add(AuditEntity.property("amount").ge(450))// критерии для выборки
-                        .add(AuditEntity.property("id").ge(6L))
-                        .addProjection(AuditEntity.property("amount"))// какие поля выбираем
-                        .addProjection(AuditEntity.id())                          // как SELECT amount, id FROM Payment
+                session.createQuery("select p from Payment p where receiver.id = :userId", Payment.class)
+                        .setParameter("userId", 1L)
+                        .setCacheable(true)
+//                        .setCacheRegion("queries")
+//                        .setHint(QueryHints.CACHEABLE, true)
                         .getResultList();
 
-                session2.getTransaction().commit();
+                System.out.println(sessionFactory.getStatistics().getCacheRegionStatistics("Users"));
+                session.getTransaction().commit();
             }
         }
+
+
 
     }
 }

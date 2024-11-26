@@ -1,6 +1,7 @@
 package com.dmdev.entity;
 
 import lombok.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.OptimisticLockType;
 import org.hibernate.annotations.OptimisticLocking;
 import org.hibernate.envers.Audited;
@@ -16,6 +17,7 @@ import javax.persistence.*;
 @Entity
 //@OptimisticLocking(type = OptimisticLockType.VERSION)
 @Audited
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Payment extends AuditableEntity<Long> {
 
     @Id
